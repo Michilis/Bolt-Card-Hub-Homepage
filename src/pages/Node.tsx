@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Server, Copy, Check, ExternalLink, Zap, Shield, Clock, Users, Activity, Heart, QrCode } from 'lucide-react';
 import QRCode from 'qrcode';
 import { config } from '../config/env';
+import { updatePageSEO } from '../utils/seo';
+import { pageSEO } from '../config/seo';
 
 interface NodeInfo {
   public_key: string;
@@ -24,6 +26,8 @@ const Node = () => {
   const [donationQR, setDonationQR] = useState<string>('');
 
   useEffect(() => {
+    updatePageSEO(pageSEO.node);
+    
     const fetchNodeInfo = async () => {
       try {
         setLoading(true);

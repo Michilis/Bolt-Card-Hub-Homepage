@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://bolthub.azzamo.net/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow all content for search engines
+# This is a public-facing website for BoltCard services
+
+# Block access to sensitive files if they exist in the future
+# Disallow: /api/
+# Disallow: /admin/ 

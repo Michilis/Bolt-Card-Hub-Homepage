@@ -37,7 +37,7 @@ This is the easiest method for most users, providing a smooth mobile experience 
 **Option B: Manual Connection**
 - In the app, add a new Lightning wallet
 - Select "Connect to a custom server" or similar option
-- Enter the Hub URL: `https://nfc.azzamo.net/api/`
+- Enter the Hub URL: `https://nfc.azzamo.net/`
 - The app will create a new account on the Hub automatically
 
 ### Step 2: Register Your Bolt Card
@@ -169,22 +169,6 @@ Your card is now linked to your LNbits wallet! Test with a small payment using B
 - **Verify URLs** - ensure correct Hub or LNbits address
 - **Check internet** - stable connection required
 - **Restart app** - close and reopen if experiencing glitches
-
-## Next Steps
-
-- **Explore** [Payment Methods](./payments.md) for funding options
-- **Learn about** [Advanced Features](./features.md) and integrations
-- **Get help** from our [Support](./support.md) community
-- **Read** [Troubleshooting](./troubleshooting.md) for common issues
-
-## Quick Reference
-
-| Service | URL |
-|---------|-----|
-| Azzamo Hub | `https://nfc.azzamo.net` |
-| Hub API | `https://nfc.azzamo.net/api/` |
-| LNbits Demo | `https://azzamo.tips` |
-| Support | [support@azzamo.net](mailto:support@azzamo.net) |
 
 ---
 

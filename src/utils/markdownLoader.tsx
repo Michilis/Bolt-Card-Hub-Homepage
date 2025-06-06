@@ -10,17 +10,77 @@ import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-markdown';
 import 'prismjs/components/prism-yaml';
 
+// Utility to get the correct base path for assets
+const getBasePath = (): string => {
+  // Get the base URL from the current location
+  const baseElement = document.querySelector('base');
+  if (baseElement && baseElement.href) {
+    return baseElement.href.replace(/\/$/, '');
+  }
+  
+  // Fallback to current origin and pathname base
+  const pathname = window.location.pathname;
+  const pathBase = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname.split('/').slice(0, -1).join('/');
+  return window.location.origin + pathBase;
+};
+
 // Utility to load markdown files
 export const loadMarkdownFile = async (filename: string): Promise<string> => {
   try {
-    const response = await fetch(`/docs/${filename}`);
-    if (!response.ok) {
-      throw new Error(`Failed to load ${filename}`);
+    // Try multiple path strategies for better proxy compatibility
+    const basePath = getBasePath();
+    const attempts = [
+      `./docs/${filename}`,           // Relative to current path
+      `docs/${filename}`,             // Relative without leading ./
+      `/docs/${filename}`,            // Absolute path
+      `${basePath}/docs/${filename}`  // Full base path
+    ];
+
+    let lastError: Error | null = null;
+
+    for (const path of attempts) {
+      try {
+        console.log(`Attempting to load markdown from: ${path}`);
+        const response = await fetch(path);
+        
+        if (response.ok) {
+          console.log(`Successfully loaded markdown from: ${path}`);
+          return await response.text();
+        }
+        
+        lastError = new Error(`HTTP ${response.status}: ${response.statusText}`);
+      } catch (error) {
+        lastError = error as Error;
+        console.warn(`Failed to load from ${path}:`, error);
+      }
     }
-    return await response.text();
+
+    throw lastError || new Error(`Failed to load ${filename} from all attempted paths`);
+    
   } catch (error) {
     console.error(`Error loading ${filename}:`, error);
-    return `# Error Loading Content\n\nFailed to load content from docs/${filename}`;
+    
+    // Return a more helpful error message
+    return `# Error Loading Content
+
+⚠️ **Failed to load content from \`docs/${filename}\`**
+
+This might be due to:
+- Network connectivity issues
+- Proxy configuration problems
+- Missing documentation files
+
+**Troubleshooting:**
+1. Check that the documentation files exist in the \`public/docs/\` directory
+2. Verify proxy configuration allows access to static assets
+3. Check browser developer tools for network errors
+
+**Error Details:**
+\`\`\`
+${error instanceof Error ? error.message : 'Unknown error'}
+\`\`\`
+
+Please try refreshing the page or contact support if the issue persists.`;
   }
 };
 
@@ -161,8 +221,6 @@ marked.setOptions({
   gfm: true,
   breaks: false,
   pedantic: false,
-  sanitize: false,
-  smartypants: true,
 });
 
 // Enhanced markdown parser with proper HTML rendering

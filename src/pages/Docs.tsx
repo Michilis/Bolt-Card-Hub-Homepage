@@ -34,6 +34,9 @@ import {
 } from 'lucide-react';
 import { config } from '../config/env';
 import { loadMarkdownFile, parseMarkdown, extractHeadings, generateTableOfContents } from '../utils/markdownLoader';
+import { updatePageSEO } from '../utils/seo';
+import { pageSEO } from '../config/seo';
+import ProxyDebugInfo from '../components/ProxyDebugInfo';
 
 const Docs = () => {
   const [activeSection, setActiveSection] = useState('overview');
@@ -66,6 +69,8 @@ const Docs = () => {
   ];
 
   useEffect(() => {
+    updatePageSEO(pageSEO.docs);
+    
     const loadAllDocs = async () => {
       setLoading(true);
       const content: { [key: string]: string } = {};
@@ -145,6 +150,9 @@ const Docs = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Debug Info Component (dev only) */}
+      <ProxyDebugInfo />
+      
       {/* Header - Not Sticky */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -3,12 +3,16 @@ import { FileText, ArrowLeft, Mail, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { parseMarkdown } from '../utils/markdownLoader';
 import { config } from '../config/env';
+import { updatePageSEO } from '../utils/seo';
+import { pageSEO } from '../config/seo';
 
 const Terms = () => {
   const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    updatePageSEO(pageSEO.terms);
+    
     const loadContent = async () => {
       try {
         setLoading(true);
