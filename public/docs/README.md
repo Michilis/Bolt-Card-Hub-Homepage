@@ -23,12 +23,6 @@ Welcome to the **Azzamo Bolt Card Hub**, your gateway to managing and using Bolt
 3. Write your Bolt Card via NFC
 4. Start making Lightning payments!
 
-## 📞 Support
-
-- **Telegram**: [@azzamo](https://t.me/azzamo)
-- **Email**: [support@azzamo.net](mailto:support@azzamo.net)
-- **Website**: [azzamo.net](https://azzamo.net)
-
 ---
 
 *Powered by Azzamo Lightning Infrastructure*

@@ -1,5 +1,15 @@
 // Environment configuration with fallbacks
 export const config = {
+  // Development Configuration
+  debug: import.meta.env.VITE_DEBUG === 'true',
+  devPort: parseInt(import.meta.env.VITE_DEV_PORT || '5176'),
+
+  // Analytics Configuration
+  analytics: {
+    plausibleDomain: import.meta.env.VITE_PLAUSIBLE_DOMAIN || '',
+    plausibleSrc: import.meta.env.VITE_PLAUSIBLE_SRC || 'https://plausible.io/js/script.js',
+  },
+
   // Hub Configuration
   hubName: import.meta.env.VITE_HUB_NAME || 'Azzamo BoltCard Hub',
   hubUrl: import.meta.env.VITE_HUB_URL || 'https://nfc.azzamo.net',
