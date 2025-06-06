@@ -1,296 +1,239 @@
 # Features & Integrations
 
-Azzamo BoltCard Hub integrates seamlessly with popular Lightning Network tools and services, providing a comprehensive payment solution.
+The Azzamo Bolt Card Hub provides comprehensive Bolt Card management with multiple integration options for different user needs and technical preferences.
 
-## 🔌 Current Integrations
+## 🏗️ Core Architecture
 
-### Point of Sale Systems
+### Bolt Card Hub Technology
+- **LNDHub Fork** - Based on proven BlueWallet backend technology
+- **LNURL Protocol** - Standard Lightning Network URL for payments
+- **NTAG424 DNA** - Cryptographic NFC chip with replay protection
+- **Open Source** - Self-hostable for full sovereignty
+- **Community Driven** - Azzamo provides hosted service for convenience
 
-#### BTCPay Server
-- **Full compatibility** with BTCPay Server terminals
-- **NFC payment processing** for in-store purchases
-- **Real-time settlement** to merchant wallets
-- **Multi-currency support** with automatic conversion
-- **Setup guide**: [BTCPay + BoltCard](https://docs.btcpayserver.org/Transmuter/)
+### Security Model
+- **Custodial Service** - Azzamo holds funds like hosted LNbits or exchange
+- **Cryptographic Protection** - Each tap generates unique encrypted codes
+- **Spending Limits** - User-configurable per-transaction and daily limits
+- **No PIN Required** - Tap-and-go simplicity by default
+- **RFID Protection** - Optional blocking sleeves for additional security
 
-#### LNPoS Devices
-- **Native support** for LNPoS terminals
-- **Plug-and-play** integration
-- **Custom branding** options available
-- **Bulk deployment** for chains and franchises
+## 🔌 Integration Methods
 
-#### Square Integration
-- **Lightning payments** through Square terminals
-- **Unified reporting** with traditional payments
-- **Easy merchant onboarding** process
-- **Competitive processing** fees
+### Method 1: Bolt Card Wallet App + Azzamo Hub (Recommended)
 
-### Wallet Integrations
+#### Mobile App Features
+- **Fork of BlueWallet** - Familiar interface with Bolt Card features
+- **NFC Card Management** - Built-in scanning and programming
+- **Real-time Notifications** - Push alerts for every card use
+- **Multi-wallet Support** - Multiple cards via separate wallets
+- **Balance Tracking** - Instant updates and transaction history
 
-#### LNbits Bolt Card Extension
-- **Advanced card management** features
-- **Bulk operations** for multiple cards
-- **Custom spending limits** and controls
-- **Detailed analytics** and reporting
-- **Self-hosted option** available
+#### Hub Capabilities
+- **LNDHub Compatible** - Standard Lightning wallet API
+- **Card Registration** - Secure key generation and storage
+- **Payment Processing** - Automated LNURL-withdraw handling
+- **Limit Enforcement** - Per-tap and daily spending controls
+- **Transaction Logging** - Complete payment history
 
-#### Zeus Wallet
-- **Direct integration** with Zeus mobile wallet
-- **Channel management** through Zeus interface
-- **Advanced Lightning** features access
-- **Node operation** capabilities
+#### Setup Process
+1. Download Bolt Card Wallet app ([Android](https://play.google.com/store/apps/details?id=com.boltcard.boltcard) / [iOS](https://apps.apple.com/us/app/bolt-card-wallet/id6446301845))
+2. Connect to `https://nfc.azzamo.net/`
+3. Register card via NFC scan
+4. Set spending limits and fund wallet
+5. Start making tap-to-pay transactions
 
-#### Phoenix Wallet
-- **Seamless payments** to Phoenix users
-- **Automatic channel** management
-- **User-friendly** interface
-- **Reliable routing** through ACINQ
+### Method 2: LNbits Integration (Advanced)
 
-### E-commerce Platforms
+#### LNbits Features  
+- **Web-based Management** - Browser interface for card control
+- **Bolt Cards Extension** - Dedicated module for card management
+- **Multiple Cards** - Link several cards to one wallet
+- **Detailed Analytics** - Transaction logs and usage statistics
+- **QR Code Programming** - Generate auth links for NFC writing
 
-#### WooCommerce
-- **WordPress plugin** for online stores
-- **NFC checkout** option for in-person pickup
-- **Automatic order** fulfillment
-- **Inventory management** integration
+#### Azzamo LNbits Demo
+- **Demo Server**: [https://azzamo.tips](https://azzamo.tips)
+- **No Registration** - Instant wallet creation
+- **Small Amounts** - Suitable for testing and light usage
+- **Community Resource** - Free service for Bitcoin community
 
-#### Shopify
-- **Lightning payment** gateway
-- **Real-time conversion** rates
-- **Multi-currency** support
-- **Easy installation** process
+#### Setup Process
+1. Visit [https://azzamo.tips](https://azzamo.tips) and save wallet URL
+2. Fund wallet via Lightning invoice
+3. Enable "Bolt Cards" extension
+4. Create card entry with NFC scan
+5. Use separate programming app to write card
+6. Test with small payment
 
-## ⚡ Current Features
+### Method 3: Hybrid Approach
+
+#### Combined Benefits
+- **LNbits for Management** - Web dashboard for detailed control
+- **App for Convenience** - Mobile app connected to LNbits LNDHub
+- **Flexible Funding** - Multiple top-up methods
+- **Best of Both** - Web analytics + mobile notifications
+
+## ⚡ Current Capabilities
 
 ### Card Management
 
-#### Multiple Cards per Wallet
-- **Create unlimited** cards per account
-- **Individual balances** and settings
-- **Custom names** and descriptions
-- **Easy switching** between cards
+#### Registration & Programming
+- **NFC Scanning** - Read card UID automatically
+- **Credential Generation** - Secure LNURL and keys creation
+- **Card Writing** - Program NFC chip with payment data
+- **Multi-device Support** - Use any NFC-enabled phone
+- **Card Nicknames** - Custom names for easy identification
 
-#### Per-Card Balance Tracking
-- **Real-time balance** updates
-- **Individual transaction** history
-- **Spending analytics** per card
-- **Export capabilities** for accounting
 
-#### Transaction History
-- **Detailed records** of all payments
-- **Merchant information** when available
-- **Search and filter** capabilities
-- **Export to CSV** for analysis
+#### Transaction Monitoring
+- **Real-time Alerts** - Instant notifications for card usage
+- **Detailed History** - Complete log of all payments
+- **Balance Tracking** - Live wallet balance updates
+- **Export Capabilities** - Transaction data for accounting
+- **Merchant Information** - Payment destination details when available
 
-#### Real-time Notifications
-- **Instant payment** alerts
-- **Low balance** warnings
-- **Security event** notifications
-- **Customizable alert** preferences
+### Payment Processing
 
-### Security Features
+#### Lightning Network Integration
+- **Instant Settlements** - Sub-second payment processing
+- **LNURL-withdraw** - Standard protocol for card payments
+- **Routing Optimization** - Efficient Lightning Network paths
+- **Fee Minimization** - Low-cost transactions (usually few sats)
+- **Global Compatibility** - Works anywhere Lightning is accepted
 
-#### LNURL-auth Protection
-- **Secure authentication** for every transaction
-- **Anti-replay protection** built-in
-- **Cryptographic signatures** verify authenticity
-- **No sensitive data** stored on card
+#### Merchant Compatibility
+**Compatible Point-of-Sale Systems:**
+- **Breez POS** - Mobile app with built-in NFC support
+- **BTCPay Server** - LNURL-pay terminal integration
+- **VoltPay** - Lightning payment app with NFC
+- **LNbits TPoS** - Simple web-based terminals
+- **CoinCorner PoS** - Dedicated merchant application
+- **Wallet of Satoshi** - PoS mode with NFC receive
+- **Any LNURL-compatible** merchant terminal
 
-#### Spending Limits
-- **Per-transaction limits** configurable
-- **Daily spending caps** for protection
-- **Merchant category** restrictions (coming soon)
-- **Geographic limits** (coming soon)
-
-#### Fraud Detection
-- **Unusual spending** pattern detection
-- **Geographic anomaly** alerts
-- **Velocity checks** for rapid transactions
-- **Manual review** for suspicious activity
+#### Transaction Flow
+1. **Merchant Creates Invoice** - Lightning payment request
+2. **Customer Taps Card** - NFC transmits LNURL to merchant device
+3. **Hub Receives Request** - Merchant's device calls Azzamo Hub
+4. **Verification Process** - Hub checks card, limits, and balance
+5. **Payment Execution** - Lightning payment sent if approved
+6. **Instant Confirmation** - Both parties receive payment confirmation
 
 ### User Experience
 
-#### Mobile App
-- **Intuitive interface** for card management
-- **Quick setup** process
-- **Real-time balance** and history
-- **Push notifications** for events
+#### Mobile App Experience
+- **Simple Setup** - Connect to Hub in minutes
+- **Intuitive Interface** - Familiar wallet-style design
+- **Quick Funding** - Generate Lightning invoices instantly
+- **Push Notifications** - Real-time payment alerts
+- **Offline Card Usage** - No phone needed during payments
 
-#### Web Dashboard
-- **Comprehensive management** portal
-- **Advanced analytics** and reporting
-- **Bulk operations** for businesses
-- **API access** for developers
+#### Web Dashboard (LNbits)
+- **Comprehensive Management** - Full card control via browser
+- **Multiple Card View** - Manage family/business cards centrally
+- **Advanced Analytics** - Detailed usage statistics
+- **Bulk Operations** - Efficient management of many cards
+- **QR Code Generation** - Programming codes for new cards
 
-#### NFC Compatibility
-- **Universal NFC** reader support
-- **Fast tap-to-pay** experience
-- **Offline card** functionality
-- **Multiple card** support per device
+## 🌟 Advanced Features
 
-## 🚀 Coming Soon
+### Multiple Card Management
 
-### Q1 2025 Features
+#### Family/Business Use
+- **Individual Cards** - Separate card per person
+- **Shared Funding** - Common wallet funding multiple cards
+- **Individual Limits** - Different spending controls per card
+- **Centralized Monitoring** - View all card activity in one place
+- **Easy Top-ups** - Bulk funding across multiple cards
 
-#### Custom Card Limits
-- **Merchant-specific** spending limits
-- **Time-based restrictions** (hours, days)
-- **Category-based controls** (food, retail, etc.)
-- **Velocity limits** for rapid transactions
+#### Card Types & Use Cases
+- **Personal Spending** - Daily purchases and payments
+- **Gift Cards** - Prepaid cards for recipients
+- **Travel Cards** - Dedicated cards for trips
+- **Business Expense** - Employee spending cards
+- **Event Cards** - Conference or meetup payments
 
-#### Enhanced Analytics
-- **Spending insights** and trends
-- **Merchant analysis** and preferences
-- **Budget tracking** and alerts
-- **Export to popular** accounting software
+### Security & Risk Management
 
-#### Tap-to-Sign Authentication
-- **Secure document** signing with NFC
-- **Multi-factor authentication** support
-- **Digital identity** verification
-- **Enterprise SSO** integration
+#### Theft Protection
+- **Immediate Disabling** - Instant card deactivation via app/web
+- **Limit-based Damage Control** - Losses capped by spending limits
+- **Empty Wallet Strategy** - Transfer funds to disable stolen card
+- **Real-time Monitoring** - Instant alerts for suspicious activity
+- **RFID Blocking** - Optional sleeve protection
 
-### Q2 2025 Features
+#### Best Practices
+- **Conservative Limits** - Set reasonable spending thresholds
+- **Regular Monitoring** - Frequent transaction review
+- **Minimal Balance** - Only keep needed funds on card
+- **Secure Backups** - Save wallet access credentials safely
+- **Update Apps** - Keep software current for security
 
-#### Tap-to-Withdraw Functionality
-- **ATM-style withdrawals** via NFC
-- **Lightning to on-chain** conversion
-- **Partner location** network
-- **Secure PIN** protection
+### Integration Capabilities
 
-#### Advanced Card Types
-- **Gift cards** with expiration dates
-- **Prepaid cards** for specific merchants
-- **Corporate cards** with expense controls
-- **Loyalty cards** with reward points
+#### API Access
+- **LNDHub Protocol** - Standard Lightning wallet API
+- **REST Endpoints** - Programmatic access to Hub features
+- **Webhook Support** - Real-time payment notifications
+- **Rate Limiting** - Proper API usage controls
+- **Documentation** - Complete API reference available
 
-#### API v2
-- **GraphQL support** for flexible queries
-- **Webhook improvements** with retry logic
-- **Rate limiting** enhancements
-- **Better error handling** and responses
+#### Developer Tools
+- **Open Source Components** - Self-hostable Bolt Card Hub
+- **Standard Protocols** - LNURL, LNDHub compatibility
+- **Testing Environment** - Demo servers for development
+- **Community Support** - Active developer community
+- **Documentation** - Setup guides and examples
 
-### Q3-Q4 2025 Features
+## 🚀 Self-Hosting Options
 
-#### Subscription Management
-- **Recurring payments** automation
-- **Subscription tracking** and management
-- **Auto-reload** from Lightning channels
-- **Billing cycle** optimization
+### Running Your Own Hub
 
-#### Advanced Integrations
-- **Accounting software** direct integration
-- **ERP system** connectivity
-- **Inventory management** sync
-- **CRM platform** integration
+#### Why Self-Host?
+- **Full Sovereignty** - Complete control over funds and data
+- **Privacy** - No third-party data sharing
+- **Custom Features** - Modify Hub for specific needs
+- **Family/Business** - Private Hub for organization
+- **Learning** - Understand Lightning Network technology
 
-#### Global Expansion
-- **Multi-currency** native support
-- **Regional compliance** features
-- **Local payment** method integration
-- **International** merchant network
+#### Requirements
+- **Lightning Node** - LND node with admin access
+- **Server Infrastructure** - VPS or dedicated hardware
+- **Technical Knowledge** - Linux, Docker, and Lightning familiarity
+- **Maintenance** - Regular updates and monitoring
+- **Security** - Proper key management and backup procedures
 
-## 🏢 Business Features
+#### Resources
+- **GitHub Repository** - [boltcard/boltcard-lndhub-docker](https://github.com/boltcard/boltcard-lndhub-docker)
+- **Documentation** - Setup guides and configuration examples
+- **Community Support** - Help from experienced operators
+- **Migration Path** - Move from Azzamo Hub to self-hosted
 
-### Enterprise Solutions
 
-#### Bulk Card Management
-- **Deploy hundreds** of cards at once
-- **Centralized management** dashboard
-- **Role-based access** controls
-- **Audit trails** for compliance
-
-#### Custom Branding
-- **White-label solutions** available
-- **Custom card designs** and branding
-- **Branded mobile apps** (enterprise tier)
-- **Custom domain** hosting
-
-#### Advanced Reporting
-- **Real-time dashboards** for executives
-- **Compliance reporting** automation
-- **Cost center** allocation
-- **Tax reporting** assistance
-
-### Developer Tools
-
-#### Comprehensive APIs
-- **RESTful APIs** for all operations
-- **WebSocket support** for real-time data
-- **SDKs available** in multiple languages
-- **Sandbox environment** for testing
-
-#### Webhook System
-- **Real-time event** notifications
-- **Reliable delivery** with retries
-- **Custom endpoint** configuration
-- **Event filtering** and routing
-
-#### Documentation & Support
-- **Interactive API** documentation
-- **Code examples** and tutorials
-- **Developer community** access
-- **Technical support** for integration
-
-## 🔧 Technical Specifications
-
-### Performance
-- **Sub-second** payment processing
-- **99.9% uptime** guarantee
-- **Global CDN** for fast API responses
-- **Auto-scaling** infrastructure
-
-### Security
-- **SOC 2 Type II** compliance (in progress)
-- **PCI DSS** compliance for card data
-- **End-to-end encryption** for all communications
-- **Regular security** audits and testing
-
-### Scalability
-- **Horizontal scaling** for high volume
-- **Load balancing** across multiple regions
-- **Database sharding** for performance
-- **Caching layers** for speed optimization
-
-## 🤝 Partnership Opportunities
-
-### Integration Partners
-- **Payment processors** seeking Lightning support
-- **POS manufacturers** wanting NFC capabilities
-- **E-commerce platforms** adding crypto payments
-- **Wallet providers** expanding Lightning features
-
-### Merchant Partners
-- **Retail chains** adopting Lightning payments
-- **Restaurant groups** implementing NFC
-- **Event organizers** using cashless systems
-- **Service providers** accepting crypto
-
-### Technology Partners
-- **Hardware manufacturers** for NFC devices
-- **Software companies** building Lightning apps
-- **Consulting firms** implementing crypto solutions
-- **System integrators** deploying at scale
-
-## 📞 Integration Support
-
-### Getting Started
-- **Technical consultation** for integration planning
-- **Proof of concept** development assistance
-- **Testing environment** access
-- **Go-live support** and monitoring
-
-### Ongoing Support
-- **24/7 technical support** for partners
-- **Regular check-ins** and optimization
-- **Feature request** prioritization
-- **Joint marketing** opportunities
-
-### Contact Information
-- **Partnership inquiries**: [partners@azzamo.net](mailto:partners@azzamo.net)
-- **Technical support**: [support@azzamo.net](mailto:support@azzamo.net)
-- **Sales questions**: [sales@azzamo.net](mailto:sales@azzamo.net)
+### Merchant Networks
+- **Bitcoin Conferences** - Wide acceptance at Bitcoin events
+- **Lightning Meetups** - Community gatherings and merchants
+- **Tech-forward Businesses** - Early adopter merchants
+- **Global Expansion** - Growing merchant acceptance worldwide
 
 ---
 
-*Ready to integrate Lightning payments? Let's build the future together.*
+## 🎯 Getting Started
+
+### Recommended Approach
+1. **Start with Azzamo Hub** - Use hosted service for learning
+2. **Test with Small Amounts** - Gain experience safely
+3. **Explore LNbits** - Try web-based management
+4. **Consider Self-hosting** - Move to own infrastructure when ready
+5. **Share Knowledge** - Help grow the Bolt Card community
+
+### Next Steps
+- **Read** [Getting Started Guide](./getting-started.md) for setup
+- **Check** [FAQ & Troubleshooting](./troubleshooting.md) for help
+- **Visit** [Support](./support.md) for community resources
+- **Explore** [Payment Methods](./payments.md) for funding options
+
+---
+
+*The Azzamo Bolt Card Hub bridges the gap between Bitcoin's cutting-edge Lightning Network and familiar contactless payment experiences. Whether you're an individual looking for convenient Bitcoin payments or a business exploring Lightning integration, the Hub provides flexible options to meet your needs.*

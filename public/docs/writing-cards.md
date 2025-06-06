@@ -130,17 +130,11 @@ For developers and advanced users:
 
 For businesses needing large quantities:
 
-- **Contact Azzamo** for bulk services
+- **Contact Plebtag.com** for bulk services
 - **Custom branding** options available
 - **Quality assurance** testing included
 - **Technical support** during deployment
 
-### Integration Support
-
-- **API documentation** for developers
-- **Custom integration** consulting
-- **Technical workshops** available
-- **Ongoing support** contracts
 
 ## Tools & Resources
 
@@ -167,8 +161,6 @@ For businesses needing large quantities:
 If you need help with advanced configuration:
 
 - 💬 **Telegram**: [@azzamo](https://t.me/azzamo)
-- 📧 **Email**: [support@azzamo.net](mailto:support@azzamo.net)
-- 🐙 **GitHub**: [github.com/azzamo](https://github.com/azzamo)
 
 ---
 

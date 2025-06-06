@@ -9,7 +9,7 @@ Learn how to fund your Bolt Card and make Lightning payments with ease.
 The easiest way to add funds to your Bolt Card:
 
 1. **Open** the Bolt Card Wallet app
-2. **Tap "Top Up"** or similar funding option
+2. **Tap "Receive"** or similar funding option
 3. **Choose amount** or scan an existing invoice
 4. **Generate Lightning invoice** 
 5. **Pay from any Lightning wallet**
@@ -17,24 +17,15 @@ The easiest way to add funds to your Bolt Card:
 
 ### Compatible Lightning Wallets
 
-Your Bolt Card works with any Lightning wallet:
+Your Bolt Card wallet works on any Lightning wallet:
 
 #### Mobile Wallets
 - **Zeus** — Advanced Lightning wallet
-- **Phoenix** — User-friendly with automatic channels
-- **Breez** — Non-custodial with great UX
-- **Wallet of Satoshi** — Custodial, very simple
 - **Blue Wallet** — Popular multi-currency wallet
-- **Muun** — Bitcoin and Lightning combined
-
-#### Desktop Wallets
-- **Zap** — Desktop Lightning wallet
-- **Thunderhub** — Node management interface
-- **RTL (Ride The Lightning)** — Web-based node control
 
 #### Web Wallets
 - **Alby** — Browser extension wallet
-- **LNbits** — Self-hosted Lightning wallet
+
 
 ### Funding Tips
 
@@ -64,11 +55,6 @@ Using your Bolt Card for payments is simple:
 - **Square** with Lightning integration
 - **Custom NFC readers** with Lightning support
 
-#### Online Services
-- **E-commerce** with NFC checkout
-- **Subscription services** with Lightning billing
-- **Digital content** purchases
-- **Gaming platforms** with Lightning integration
 
 #### Physical Locations
 - **Coffee shops** with Lightning support
@@ -85,7 +71,7 @@ Using your Bolt Card for payments is simple:
 - 🔒 **Tamper detection** built-in
 
 #### Speed
-- ⚡ **Sub-second** settlement times
+- ⚡ **Seconds** settlement times
 - ⚡ **Instant confirmation** on both ends
 - ⚡ **No waiting** for blockchain confirmations
 - ⚡ **Real-time** balance updates
@@ -128,11 +114,6 @@ Protect your funds with built-in security features:
 - **Unique card identifiers** prevent cloning
 - **Secure element** protection (NTAG424-DNA)
 
-#### Monitoring
-- **Real-time alerts** for all transactions
-- **Unusual activity** detection
-- **Geographic tracking** (optional)
-- **Spending pattern** analysis
 
 ## 📊 Transaction Management
 
@@ -153,45 +134,7 @@ Keep track of your funds:
 - **Real-time balance** display
 - **Pending transactions** visibility
 - **Low balance** warnings
-- **Auto-reload** options (coming soon)
 
-### Reporting
-
-For business users:
-
-- **Monthly statements** available
-- **CSV export** for accounting
-- **Tax reporting** assistance
-- **Bulk transaction** analysis
-
-## 🔧 Advanced Payment Features
-
-### Multiple Cards
-
-Manage several cards from one wallet:
-
-- **Different purposes** (personal, business, gifts)
-- **Separate balances** per card
-- **Individual limits** and settings
-- **Easy switching** between cards
-
-### Integration Options
-
-For developers and businesses:
-
-- **API access** for custom integrations
-- **Webhook notifications** for real-time updates
-- **Bulk operations** for multiple cards
-- **Custom branding** options
-
-### Future Features
-
-Coming soon:
-
-- **Tap-to-withdraw** functionality
-- **Automatic reloading** from Lightning channels
-- **Advanced analytics** and insights
-- **Loyalty program** integration
 
 ## 💡 Best Practices
 
@@ -203,15 +146,9 @@ Coming soon:
 
 ### Usage
 - 💡 **Test with small amounts** first
-- 💡 **Keep multiple funding sources** available
 - 💡 **Understand merchant policies** before paying
 - 💡 **Have backup payment** methods ready
 
-### Maintenance
-- 🔧 **Update wallet app** regularly
-- 🔧 **Check card condition** periodically
-- 🔧 **Verify NFC functionality** if issues arise
-- 🔧 **Contact support** for persistent problems
 
 ## 🆘 Payment Troubleshooting
 
@@ -223,15 +160,6 @@ Coming soon:
 | Card not recognized | Clean card, check NFC settings |
 | Slow processing | Verify internet connection |
 | Wrong amount charged | Contact merchant and support |
-
-### Getting Help
-
-If you encounter payment issues:
-
-- 📞 **Immediate help**: [Telegram @azzamo](https://t.me/azzamo)
-- 📧 **Email support**: [support@azzamo.net](mailto:support@azzamo.net)
-- 🌐 **Documentation**: [azzamo.net](https://azzamo.net)
-- 💬 **Community**: Join our user groups
 
 ---
 
