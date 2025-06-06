@@ -200,7 +200,7 @@ If the test fails:
 **Problem**: Bolt Card Wallet app fails to connect to Azzamo Hub.
 
 #### Solutions:
-1. **Verify Hub URL**: Use exactly `https://nfc.azzamo.net/api/` (include trailing slash)
+1. **Verify Hub URL**: Use exactly `https://nfc.azzamo.net/
 2. **Check internet connection** - try WiFi vs mobile data
 3. **Disable VPN** if active
 4. **Clear app cache** and restart
@@ -253,8 +253,7 @@ If the test fails:
 ## 📞 Getting Help
 
 ### Support Channels
-- **Email**: [support@azzamo.net](mailto:support@azzamo.net)
-- **Telegram**: [@azzamo](https://t.me/azzamo)
+- **Telegram**: [@AzzamoBoltcardhub](https://t.me/AzzamoBoltcardhub)
 - **Documentation**: Available in `/docs` section
 
 ### Community Resources

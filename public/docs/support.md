@@ -7,10 +7,7 @@ Get help from the Azzamo team and connect with the BoltCard community.
 ### Primary Support Channels
 
 #### Telegram (Fastest Response)
-- **Channel**: [@azzamo](https://t.me/azzamo)
-- **Response Time**: 1-4 hours
-- **Best For**: Urgent issues, quick questions, real-time help
-- **Available**: 24/7 monitoring, active response during business hours
+- **Channel**: [@AzzamoBoltcardhub](https://t.me/AzzamoBoltcardhub)
 
 
 ## 🆘 What to Include When Contacting Support
@@ -66,7 +63,7 @@ Get help from the Azzamo team and connect with the BoltCard community.
 ### Official Communities
 
 #### Telegram Groups
-- **[@boltcard](https://t.me/boltcard)** - General Bolt Card community
+- **[@boltcard](https://t.me/bolt_card)** - General Bolt Card community
 
 
 ## 📚 Self-Help Resources
@@ -92,7 +89,6 @@ Get help from the Azzamo team and connect with the BoltCard community.
 - **Transparent communication** about issues and updates
 
 ### Feedback & Suggestions
-- **Bug reports**: [GitHub Issues](https://github.com/azzamo/issues)
 - **General suggestions**: Any of our support channels
 
 ---

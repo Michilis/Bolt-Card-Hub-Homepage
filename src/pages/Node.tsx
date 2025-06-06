@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Server, Copy, Check, ExternalLink, Zap, Shield, Clock, Users, Activity, Heart, QrCode } from 'lucide-react';
+import QRCode from 'qrcode';
 import { config } from '../config/env';
 
 interface NodeInfo {
@@ -20,6 +21,7 @@ const Node = () => {
   const [nodeInfo, setNodeInfo] = useState<NodeInfo | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [donationQR, setDonationQR] = useState<string>('');
 
   useEffect(() => {
     const fetchNodeInfo = async () => {
@@ -38,7 +40,26 @@ const Node = () => {
       }
     };
 
+    const generateDonationQR = async () => {
+      try {
+        // Generate QR code for Lightning address
+        const lightningUrl = `lightning:${config.donation.lightningAddress}`;
+        const qrDataURL = await QRCode.toDataURL(lightningUrl, {
+          width: 160,
+          margin: 2,
+          color: {
+            dark: '#000000',
+            light: '#FFFFFF',
+          },
+        });
+        setDonationQR(qrDataURL);
+      } catch (err) {
+        console.error('Error generating QR code:', err);
+      }
+    };
+
     fetchNodeInfo();
+    generateDonationQR();
   }, []);
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -236,10 +257,6 @@ const Node = () => {
                       <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2"></div>
                       Fund infrastructure improvements
                     </li>
-                    <li className="flex items-center">
-                      <div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2"></div>
-                      Enable {config.network.supportHours} technical support
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -247,17 +264,27 @@ const Node = () => {
               {/* Donation QR */}
               <div className="flex flex-col items-center">
                 <div className="bg-white rounded-2xl p-6 shadow-lg mb-4">
-                  <div className="w-40 h-40 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <QrCode className="h-16 w-16 text-gray-400 mx-auto mb-2" />
-                      <p className="text-xs text-gray-500 font-medium">Donation QR</p>
-                      <p className="text-xs text-gray-400">Scan with Lightning wallet</p>
+                  {donationQR ? (
+                    <img 
+                      src={donationQR} 
+                      alt="Lightning Donation QR Code" 
+                      className="w-40 h-40 rounded-xl"
+                    />
+                  ) : (
+                    <div className="w-40 h-40 bg-gray-100 rounded-xl flex items-center justify-center">
+                      <div className="text-center">
+                        <QrCode className="h-16 w-16 text-gray-400 mx-auto mb-2" />
+                        <p className="text-xs text-gray-500 font-medium">Generating QR...</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 
                 <div className="text-center">
-                  <p className="text-sm text-gray-600 mb-2">Any amount appreciated</p>
+                  <p className="text-sm text-gray-600 mb-1">
+                    <strong>Lightning:</strong> {config.donation.lightningAddress}
+                  </p>
+                  <p className="text-xs text-gray-500 mb-3">Scan with Lightning wallet</p>
                   <div className="flex flex-wrap justify-center gap-2">
                     <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">1K sats</span>
                     <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">10K sats</span>

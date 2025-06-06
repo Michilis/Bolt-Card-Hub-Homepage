@@ -10,6 +10,7 @@ lerna-debug.log*
 .npm/
 .bower-cache/
 .bower-tmp/
+package-lock.json
 
 # Build Outputs and Distribution
 dist/
